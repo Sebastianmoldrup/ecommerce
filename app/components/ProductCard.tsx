@@ -16,7 +16,7 @@ export function ProductCard() {
   }, []);
 
   return (
-    <ul className='flex flex-wrap gap-10 my-10 mx-auto'>
+    <ul className='flex flex-wrap gap-10 my-10 mx-auto row-start-1 col-start-1'>
       {products.map(
         (product: {
           id: number;
@@ -35,14 +35,17 @@ export function ProductCard() {
           return (
             <li
               key={product.id}
-              className='flex flex-col items-center justify-between w-[200px] h-[150px]'
+              className='flex flex-col items-center justify-between w-[200px] h-[150px] shadow-xl'
             >
-              <div className='relative w-[100px] h-[100px]'>
-                <Image src={product.thumbnail} alt='' layout='fill' />
+              <div className='flex justify-between w-full'>
+                <div>{product.price}</div>
+                <div className='relative w-[50px] h-[50px]'>
+                  <Image src={product.thumbnail} alt='' layout='fill' />
+                </div>
               </div>
               <div className='flex flex-wrap justify-between w-full'>
-                <h3 className=''>{product.title}</h3>
-                <div className=''>{product.category}</div>
+                <span>{product.title}</span>
+                <span>{product.category}</span>
               </div>
             </li>
           );
