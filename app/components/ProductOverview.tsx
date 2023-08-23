@@ -39,7 +39,7 @@ export function ProductOverview() {
               className='flex flex-col flex-wrap relative items-center justify-between group w-[200px] h-[180px] shadow-xl text-black bg-white rounded-lg hover:bg-white/75'
             >
               <div className='flex items-center justify-start w-full pt-4 px-4'>
-                <span className='line-clamp-1 text-center font-bold text-lg'>
+                <span className='line-clamp-1 text-center font-semibold text-md'>
                   {product.title}
                 </span>
               </div>

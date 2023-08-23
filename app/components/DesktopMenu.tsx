@@ -1,0 +1,35 @@
+import {
+  IconAbout,
+  IconCart,
+  IconCategory,
+  IconContact,
+  IconSale,
+  IconSearch,
+  IconShop,
+  IconHeart,
+  IconBurger,
+} from './Icons';
+
+export function DesktopMenu() {
+  const style =
+    'flex items-center text-main-100 justify-center gap-1 border-b-2 pb-1 border-transparent hover:cursor-pointer hover:-translate-y-0.5 p-2 rounded-xl hover:text-main-400 text-md';
+
+  return (
+    <div className='lg:flex flex-wrap py-4 gap-10 justify-evenly mx-auto text-lg hidden'>
+      {/* Shop btn */}
+      <a className={style} href='/shop'>
+        <IconCart /> Shop
+      </a>
+
+      {/* Category btn */}
+      <a className={style} href='/category'>
+        <IconCategory /> Category
+      </a>
+
+      {/* Sale btn */}
+      <a className={style} href='/sale'>
+        <IconSale /> Sale
+      </a>
+    </div>
+  );
+}

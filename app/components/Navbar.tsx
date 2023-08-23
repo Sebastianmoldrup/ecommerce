@@ -1,52 +1,41 @@
-import {
-  IconAbout,
-  IconCart,
-  IconCategory,
-  IconContact,
-  IconSale,
-} from './Icons';
+import { MobileMenu } from './MobileMenu';
+import { DesktopMenu } from './DesktopMenu';
 
-import { TypeWriter } from './Typerwriter';
+import { IconHeart, IconSearch, IconCart } from './Icons';
 
 export function Navbar() {
-  const btn =
-    'flex items-center justify-center gap-1 hover:text-green-400 hover:cursor-pointer hover:-translate-y-0.5';
   return (
-    <nav className='flex items-center justify-between px-10 bg-slate-600 w-full'>
-      <h1 class='animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white pr-5 text-5xl text-white font-bold'>
-        Hello World
+    <nav className='flex items-center justify-between md:px-5 px-4 py-3 bg-main-950 w-full'>
+      {/* Title */}
+      <h1 className='text-xl lg:text-2xl text-white font-bold'>
+        {/* <a href='/'>WedgeWood</a> */}
+        <a className='flex items-center gap-1' href='/'>
+          <div className='text-5xl font-bold'>W</div>
+          <div className='flex flex-col text-base'>
+            <div className='h-[15px]'>edge</div>
+            <div>ood</div>
+          </div>
+        </a>
       </h1>
 
-      <div className='flex flex-wrap py-4 gap-10 justify-evenly mx-auto text-lg'>
-        {/* Shop btn */}
-        <div className={btn}>
-          <IconCart /> Shop
-        </div>
+      {/* Desktop Menu */}
+      <DesktopMenu />
 
-        {/* Category btn */}
-        <div className={btn}>
-          <IconCategory /> Category
-        </div>
-
-        {/* Sale btn */}
-        <div className={btn}>
-          <IconSale /> Sale
-        </div>
-
-        {/* About btn */}
-        <div className={btn}>
-          <IconAbout /> About
-        </div>
-
-        {/* Contact btn */}
-        <div className={btn}>
-          <IconContact /> Contact
+      {/* Search, cart & favorites */}
+      <div className='lg:flex justify-center gap-2 md:w-[200px] py-2 px-2 rounded-xl bg-main-100 group hidden'>
+        <IconSearch />
+        <input
+          placeholder='Search'
+          className='w-1/2 bg-transparent focus:outline-none'
+        />
+        <div className='flex gap-4 items-center'>
+          <IconHeart />
+          <IconCart />
         </div>
       </div>
 
-      <div>
-        <div>Søk </div>
-      </div>
+      {/* Mobile menu */}
+      <MobileMenu />
     </nav>
   );
 }
