@@ -15,10 +15,10 @@ export function DesktopMenu() {
     'flex items-center text-main-100 justify-center gap-1 border-b-2 pb-1 border-transparent hover:cursor-pointer hover:-translate-y-0.5 p-2 rounded-xl hover:text-main-400 text-md';
 
   return (
-    <div className='lg:flex flex-wrap py-4 gap-10 justify-evenly mx-auto text-lg hidden'>
+    <div className='mx-auto hidden flex-wrap justify-evenly gap-10 py-4 text-lg lg:flex'>
       {/* Shop btn */}
       <a className={style} href='/shop'>
-        <IconCart /> Shop
+        <IconShop /> Shop
       </a>
 
       {/* Category btn */}

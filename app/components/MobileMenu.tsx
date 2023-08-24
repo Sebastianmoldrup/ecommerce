@@ -25,7 +25,7 @@ export function MobileMenu() {
       <div>
         <button
           onClick={toggleMenu}
-          className='block hover:text-gray-600 focus:outline-none text-main-100'
+          className='block text-main-100 hover:text-gray-600 focus:outline-none'
         >
           <IconBurger />
         </button>
@@ -33,25 +33,32 @@ export function MobileMenu() {
 
       {/* Full-screen Overlay Menu */}
       {menuOpen && (
-        <div className='xl:hidden fixed top-0 bottom-0 right-0 w-full md:w-64 bg-gray-800 bg-opacity-50 z-50'>
-          <div className='p-4 bg-white w-full h-full flex flex-col justify-evenly items-center'>
-            <div className='flex justify-center gap-2 py-2 px-2 rounded-xl bg-main-200 group'>
-              <IconSearch />
-              <input
-                placeholder='Search'
-                className='w-1/2 bg-transparent focus:outline-none'
-              />
-              <div className='flex gap-4 items-center'>
-                <IconHeart />
-                <IconCart />
+        <div className='fixed bottom-0 right-0 top-0 z-50 w-full bg-gray-800 bg-opacity-50 md:w-64 xl:hidden'>
+          <div className='flex h-full w-full flex-col items-center justify-between bg-white p-4'>
+            {/* Search & burger menu */}
+            <div className='flex w-full justify-between'>
+              <div className='group flex justify-center gap-2 rounded-xl bg-main-200 px-2 py-2'>
+                <IconSearch />
+                <input
+                  placeholder='Search'
+                  className='w-[150px] bg-transparent focus:outline-none md:w-[120px]'
+                />
               </div>
+
+              <button
+                onClick={toggleMenu}
+                className='block text-main-900 hover:text-gray-600 focus:outline-none'
+              >
+                <IconBurger />
+              </button>
             </div>
+
             {/* Menu links */}
             <ul className='space-y-6'>
               <li>
                 <a
                   href='#'
-                  className='text-gray-800 hover:text-gray-600 flex items-center gap-2'
+                  className='flex items-center gap-2 text-gray-800 hover:text-gray-600'
                 >
                   <IconShop /> Shop
                 </a>
@@ -59,7 +66,15 @@ export function MobileMenu() {
               <li>
                 <a
                   href='#'
-                  className='text-gray-800 hover:text-gray-600 flex items-center gap-2'
+                  className='flex items-center gap-2 text-gray-800 hover:text-gray-600'
+                >
+                  <IconCart /> Cart
+                </a>
+              </li>
+              <li>
+                <a
+                  href='#'
+                  className='flex items-center gap-2 text-gray-800 hover:text-gray-600'
                 >
                   <IconCategory /> Category
                 </a>
@@ -67,7 +82,7 @@ export function MobileMenu() {
               <li>
                 <a
                   href='#'
-                  className='text-gray-800 hover:text-gray-600 flex items-center gap-2'
+                  className='flex items-center gap-2 text-gray-800 hover:text-gray-600'
                 >
                   <IconSale /> Flash sale
                 </a>
@@ -75,15 +90,15 @@ export function MobileMenu() {
               <li>
                 <a
                   href='#'
-                  className='text-gray-800 hover:text-gray-600 flex items-center gap-2'
+                  className='flex items-center gap-2 text-gray-800 hover:text-gray-600'
                 >
-                  <IconAbout /> About
+                  <IconHeart /> Favorite
                 </a>
               </li>
               <li>
                 <a
                   href='#'
-                  className='text-gray-800 hover:text-gray-600 flex items-center gap-2'
+                  className='flex items-center gap-2 text-gray-800 hover:text-gray-600'
                 >
                   <IconContact /> Contact
                 </a>

@@ -10,6 +10,7 @@ export function ProductOverview() {
       const response = await fetch('/api/products');
       const data = await response.json();
       setProducts(data.products);
+      console.log(data.thumbnail);
     }
 
     getProducts();
@@ -17,7 +18,7 @@ export function ProductOverview() {
   }, []);
 
   return (
-    <ul className='flex flex-wrap justify-center gap-10 my-10 mx-auto row-start-1 col-start-1'>
+    <ul className='col-start-1 row-start-1 mx-auto my-10 flex flex-wrap justify-center gap-10'>
       {products.map(
         (product: {
           id: number;
@@ -36,14 +37,14 @@ export function ProductOverview() {
           return (
             <li
               key={product.id}
-              className='flex flex-col flex-wrap relative items-center justify-between group w-[200px] h-[180px] shadow-xl text-black bg-white rounded-lg hover:bg-white/75'
+              className='group relative flex h-[180px] w-[200px] flex-col flex-wrap items-center justify-between rounded-lg bg-white text-black shadow-xl hover:bg-white/75'
             >
-              <div className='flex items-center justify-start w-full pt-4 px-4'>
-                <span className='line-clamp-1 text-center font-semibold text-md'>
+              <div className='flex w-full items-center justify-start px-4 pt-4'>
+                <span className='text-md line-clamp-1 text-center font-semibold'>
                   {product.title}
                 </span>
               </div>
-              <div className='relative w-[80px] h-[80px]'>
+              <div className='relative h-[80px] w-[80px]'>
                 <Image
                   src={product.thumbnail}
                   alt=''
@@ -51,13 +52,13 @@ export function ProductOverview() {
                   className='rounded-md object-contain group-hover:brightness-75'
                 />
               </div>
-              <div className='flex justify-between px-4 pb-2 w-full items-center'>
+              <div className='flex w-full items-center justify-between px-4 pb-2'>
                 <span>{product.price + '$'}</span>
                 <span>
                   <IconCart />{' '}
                 </span>
               </div>
-              <a className='hover-button absolute cursor-pointer top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-400 hover:bg-white hover:text-black hover:border-2 hover:border-green-400 text-white px-4 py-2 rounded-md hidden group-hover:block'>
+              <a className='hover-button absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 transform cursor-pointer rounded-md bg-green-400 px-4 py-2 text-white hover:border-2 hover:border-green-400 hover:bg-white hover:text-black group-hover:block'>
                 Buy
               </a>
             </li>
