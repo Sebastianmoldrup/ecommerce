@@ -5,7 +5,8 @@ import { IconSearch, IconCart, IconSale } from './Icons';
 
 export function Category() {
   const [products, setProducts] = useState([]);
-  const [query, setQuery] = useState();
+  const [querySearch, setQuerySearch] = useState('');
+  const [queryCategory, setQueryCategory] = useState('');
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -22,33 +23,41 @@ export function Category() {
   }, []);
 
   return (
-    <div className='flex flex-col md:flex-row justify-between  w-full h-full'>
+    <div className='flex h-full w-full flex-col  justify-between md:flex-row'>
       {/* Navigation */}
-      <div className='flex flex-col justify-center gap-10 bg-main-50 py-4 px-2 md:w-2/5 lg:1/5'>
+      <div className='flex flex-col justify-center gap-10 bg-main-50 px-2 py-4 md:w-2/5 lg:w-1/5'>
         {/* Search */}
         <div className='flex flex-col gap-4 text-center'>
-          <h2 className='font-semibold text-xl'>Search for products</h2>
-          <div className='flex items-center space-x-2 bg-main-400 rounded-xl pl-2 mx-4'>
+          <h2 className='text-xl font-semibold'>Search for products</h2>
+          <div className='mx-4 flex items-center space-x-2 rounded-xl bg-main-400 pl-2'>
             <IconSearch />
             <input
               placeholder='Search'
-              className='bg-transparent focus:outline-none py-2 w-[150px]'
-              onInput={(e) => setQuery(e.target.value)}
+              className='w-[150px] bg-transparent py-2 lowercase focus:outline-none'
+              onInput={(e) => setQuerySearch(e.target.value)}
             />
           </div>
         </div>
 
         {/* Categories */}
-        <div className='text-center space-y-4'>
-          <h2 className='font-semibold text-xl'>Choose your category</h2>
-          <ul className='flex flex-col flex-wrap justify-center items-center gap-4'>
+        <div className='space-y-4 text-center'>
+          <h2 className='text-xl font-semibold'>Choose your category</h2>
+          <ul className='flex flex-col flex-wrap items-center justify-center gap-4'>
+            <li
+              className='text-md w-[200px] rounded-md bg-main-400 py-2 font-semibold capitalize text-black/75 hover:cursor-pointer hover:bg-main-900 hover:text-main-100'
+              onClick={() => {
+                setQueryCategory('');
+              }}
+            >
+              All products
+            </li>
             {categories.map((category) => {
               return (
                 <li
                   key={category}
-                  className='py-2 w-[200px] text-md text-black/75 bg-main-400 rounded-md capitalize font-semibold hover:bg-main-900 hover:text-main-100 hover:cursor-pointer'
+                  className='text-md w-[200px] rounded-md bg-main-400 py-2 font-semibold capitalize text-black/75 hover:cursor-pointer hover:bg-main-900 hover:text-main-100'
                   onClick={(e) => {
-                    setQuery(category);
+                    setQueryCategory(category);
                   }}
                 >
                   {category}
@@ -60,7 +69,12 @@ export function Category() {
       </div>
 
       {/* Product showcase */}
-      <div className='flex justify-center items-center md:w-3/5 lg:4/5'>
+      <div className='flex flex-col items-center justify-center text-center md:w-3/5 lg:w-4/5'>
+        {queryCategory ? (
+          <h2 className='w-full rounded-md bg-white py-4 text-3xl capitalize md:w-[300px]'>
+            {queryCategory}
+          </h2>
+        ) : null}
         <ul className='col-start-1 row-start-1 mx-auto my-10 flex flex-wrap justify-center gap-10'>
           {products.map(
             (product: {
@@ -76,7 +90,21 @@ export function Category() {
               stock: number;
               discountPercentage: number;
             }) => {
-              if (product.category !== query) return;
+              const regSearch = new RegExp(
+                querySearch.replace(/\s+/g, '.*'),
+                'i'
+              );
+              const regInput = new RegExp(
+                queryCategory.replace(/\s+/g, '.*'),
+                'i'
+              );
+              if (
+                !regInput.test(product.category) ||
+                !regSearch.test(product.title)
+              ) {
+                return;
+              }
+
               return (
                 <li
                   key={product.id}
