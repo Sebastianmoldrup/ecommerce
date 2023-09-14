@@ -75,7 +75,7 @@ export function Category() {
             {queryCategory}
           </h2>
         ) : null}
-        <ul className='col-start-1 row-start-1 mx-auto my-10 flex flex-wrap justify-center gap-10'>
+        <ul className='mx-auto my-10 flex h-full flex-wrap items-center justify-center gap-10 py-4'>
           {products.map(
             (product: {
               id: number;
