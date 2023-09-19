@@ -1,22 +1,56 @@
 'use client';
 import Image from 'next/image';
 import { ProductOverview } from './components/ProductOverview';
-import { IconBrand } from './components/Icons';
+import { IconLoading } from './components/Icons';
 
 export default function Home() {
+  const animals = [
+    { name: 'carmen', species: 'rabbit' },
+    { name: 'pablo', species: 'dog' },
+    { name: 'paco', species: 'dog' },
+    { name: 'trevor', species: 'fish' },
+    { name: 'jimmy', species: 'cat' },
+    { name: 'jimbob', species: 'fish' },
+    { name: 'alice', species: 'rabbit' },
+    { name: 'dina', species: 'cat' },
+  ];
+
+  // console.log(animals);
+
+  // let cats = animals.filter((animal) => {
+  //   return animal.species === 'cat';
+  // });
+
+  let cats = animals.filter((x) => x.species === 'cat');
+
+  // let names = animals.map(function (animal) {
+  //   return animal.name;
+  // });
+
+  let names = animals.map((x) => x.name);
+
+  const orders = [
+    { amount: 250 },
+    { amount: 400 },
+    { amount: 100 },
+    { amount: 325 },
+  ];
+
+  let total = orders.reduce((sum, order) => sum + order.amount, 0);
+  console.log(total);
+
   return (
     <main className='m-0 flex h-screen w-full p-0'>
-      <Image
-        src='/flat-mountains.png'
-        alt='Colored illustration of mountain tops'
-        width={1600} // Specify the image's original width
-        height={900} // Specify the image's original height
-        layout='responsive'
-        quality={100}
-        className='max-h-[650px] w-full object-cover'
-      />
-
-      <IconBrand />
+      <div className='h-[600px] w-full'>
+        <Image
+          src='/waves.png'
+          alt=''
+          fill
+          quality={100}
+          sizes='100vw'
+          className='object-fit h-auto max-w-full'
+        />
+      </div>
     </main>
   );
 }
