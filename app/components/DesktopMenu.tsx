@@ -25,11 +25,6 @@ export function DesktopMenu() {
       <a className={style} href='/category'>
         <IconCategory /> Category
       </a>
-
-      {/* Sale btn */}
-      <a className={style} href='/sale'>
-        <IconSale /> Sale
-      </a>
     </div>
   );
 }

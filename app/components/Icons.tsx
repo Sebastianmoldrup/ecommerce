@@ -155,68 +155,70 @@ export function IconBurger() {
   );
 }
 
-export function IconBrand() {
+export function IconLoading() {
   return (
-    <svg viewBox='0 0 500 500' version='1.1' id='svg_null'>
-      <g
-        id='root'
-        stroke='none'
-        stroke-width='1'
-        fill='none'
-        fill-rule='evenodd'
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      viewBox='0 0 200 200'
+      className='h-44 w-44'
+    >
+      <rect
+        fill='#FF156D'
+        stroke='#FF156D'
+        strokeWidth='14'
+        width='30'
+        height='30'
+        x='25'
+        y='50'
       >
-        <rect
-          id='background.accent'
-          fill='#393e46'
-          x='0'
-          y='0'
-          width='500'
-          height='500'
-        ></rect>
-        <g
-          id='shape.primary'
-          transform='translate(150.000000, 123.000000)'
-          fill='#eeeeee'
-        >
-          <path d='M164.662 0l-89.688 0l-34.607 32.058l79.451 86.99l79.452 -86.99l-34.608 -32.058zm-4.104 11.775l22.67 20.999l-63.41 69.421l-63.407 -69.421l22.668 -20.999l81.479 0z'></path>
-          <path d='M124.295 0l-89.688 0l-34.607 32.058l79.451 86.99l79.454 -86.99l-34.61 -32.058zm-4.104 11.775l22.67 20.999l-63.41 69.421l-63.407 -69.421l22.668 -20.999l81.479 0z'></path>
-          <polyline points='109.604 17.663 92.789 17.663 109.103 32.776 86.239 57.808 93.934 66.233 125.145 32.059 109.604 17.663'></polyline>
-        </g>
-        <g id='Group' transform='translate(40.000000, 280.000000)'>
-          <rect id='Rectangle-28' x='0' y='0' width='421' height='54'></rect>
-          <text
-            id='headerText.primary'
-            font-family='Fira Mono'
-            font-size='54'
-            font-weight='700'
-            line-spacing='54'
-            letter-spacing='5.4'
-            fill='#eeeeee'
-            data-text-alignment='C'
-            font-style='normal'
-          >
-            <tspan x='78.1953125' y='47.5'>
-              Refresh
-            </tspan>
-          </text>
-        </g>
-        <g id='Group-2' transform='translate(40.000000, 350.000000)'>
-          <rect id='Rectangle' x='0' y='0' width='420' height='30'></rect>
-          <text
-            id='captionText.primary'
-            font-family='Fira Mono'
-            font-size='25'
-            font-weight='400'
-            line-spacing='25'
-            letter-spacing='2.5'
-            fill='#eeeeee'
-            data-text-alignment='C'
-            font-style='normal'
-          >
-            <tspan x='210' y='139'></tspan>
-          </text>
-        </g>
-      </g>
+        <animate
+          attributeName='y'
+          calcMode='spline'
+          dur='2'
+          values='50;120;50;'
+          keySplines='.5 0 .5 1;.5 0 .5 1'
+          repeatCount='indefinite'
+          begin='-.4'
+        ></animate>
+      </rect>
+      <rect
+        fill='#FF156D'
+        stroke='#FF156D'
+        strokeWidth='14'
+        width='30'
+        height='30'
+        x='85'
+        y='50'
+      >
+        <animate
+          attributeName='y'
+          calcMode='spline'
+          dur='2'
+          values='50;120;50;'
+          keySplines='.5 0 .5 1;.5 0 .5 1'
+          repeatCount='indefinite'
+          begin='-.2'
+        ></animate>
+      </rect>
+      <rect
+        fill='#FF156D'
+        stroke='#FF156D'
+        strokeWidth='14'
+        width='30'
+        height='30'
+        x='145'
+        y='50'
+      >
+        <animate
+          attributeName='y'
+          calcMode='spline'
+          dur='2'
+          values='50;120;50;'
+          keySplines='.5 0 .5 1;.5 0 .5 1'
+          repeatCount='indefinite'
+          begin='0'
+        ></animate>
+      </rect>
     </svg>
   );
 }

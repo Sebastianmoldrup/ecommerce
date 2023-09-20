@@ -84,14 +84,6 @@ export function MobileMenu() {
                   href='#'
                   className='flex items-center gap-2 text-gray-800 hover:text-gray-600'
                 >
-                  <IconSale /> Flash sale
-                </a>
-              </li>
-              <li>
-                <a
-                  href='#'
-                  className='flex items-center gap-2 text-gray-800 hover:text-gray-600'
-                >
                   <IconHeart /> Favorite
                 </a>
               </li>

@@ -5,7 +5,7 @@ import { IconHeart, IconSearch, IconCart } from './Icons';
 
 export function Navbar() {
   return (
-    <nav className='flex w-full items-center justify-between px-4 py-3 md:px-5'>
+    <nav className='flex w-full items-center justify-between bg-gray-200 px-4 py-3 md:px-5'>
       {/* Title */}
       <h1 className='text-xl font-bold lg:text-2xl'>
         {/* <a href='/'>WedgeWood</a> */}

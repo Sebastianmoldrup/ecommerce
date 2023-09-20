@@ -22,6 +22,7 @@ export function Category() {
     getProducts();
   }, []);
 
+  console.log(products);
   return (
     <div className='flex h-full w-full flex-col  justify-between md:flex-row'>
       {/* Navigation */}
