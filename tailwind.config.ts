@@ -14,7 +14,7 @@ const config: Config = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       colors: {
-        main: {
+        wedge: {
           50: '#f2f9f9',
           100: '#ddeff0',
           200: '#bFe0e2',
@@ -27,6 +27,13 @@ const config: Config = {
           900: '#2d464c',
           950: '#1a2c32',
         },
+        main: '#f2eef5',
+        secondary: '#994ff3',
+        tertiary: '#fbdd74',
+        title: '#181818',
+        paragraph: '#2e2e2e',
+        highlight: '#4fc4cf',
+        stroke: '#181818',
       },
     },
   },

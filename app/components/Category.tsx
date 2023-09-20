@@ -25,11 +25,11 @@ export function Category() {
   return (
     <div className='flex h-full w-full flex-col  justify-between md:flex-row'>
       {/* Navigation */}
-      <div className='flex flex-col justify-center gap-10 bg-main-50 px-2 py-4 md:w-2/5 lg:w-1/5'>
+      <div className='flex flex-col justify-center gap-10 px-2 py-4 md:w-2/5 lg:w-1/5'>
         {/* Search */}
         <div className='flex flex-col gap-4 text-center'>
           <h2 className='text-xl font-semibold'>Search for products</h2>
-          <div className='mx-4 flex items-center space-x-2 rounded-xl bg-main-400 pl-2'>
+          <div className='mx-4 flex items-center space-x-2 rounded-xl pl-2'>
             <IconSearch />
             <input
               placeholder='Search'
@@ -44,7 +44,7 @@ export function Category() {
           <h2 className='text-xl font-semibold'>Choose your category</h2>
           <ul className='flex flex-col flex-wrap items-center justify-center gap-4'>
             <li
-              className='text-md w-[200px] rounded-md bg-main-400 py-2 font-semibold capitalize text-black/75 hover:cursor-pointer hover:bg-main-900 hover:text-main-100'
+              className='text-md w-[200px] rounded-md py-2 font-semibold capitalize text-black/75 hover:cursor-pointer'
               onClick={() => {
                 setQueryCategory('');
               }}
@@ -55,7 +55,7 @@ export function Category() {
               return (
                 <li
                   key={category}
-                  className='text-md w-[200px] rounded-md bg-main-400 py-2 font-semibold capitalize text-black/75 hover:cursor-pointer hover:bg-main-900 hover:text-main-100'
+                  className='text-md w-[200px] rounded-md py-2 font-semibold capitalize text-black/75 hover:cursor-pointer'
                   onClick={(e) => {
                     setQueryCategory(category);
                   }}
@@ -108,7 +108,7 @@ export function Category() {
               return (
                 <li
                   key={product.id}
-                  className='group relative flex h-[180px] w-[200px] flex-col flex-wrap items-center justify-between rounded-lg bg-white text-black shadow-xl hover:bg-white/75'
+                  className='group relative flex h-[180px] w-[200px] flex-col flex-wrap items-center justify-between rounded-lg bg-white shadow-xl hover:bg-white/75'
                 >
                   <div className='flex w-full items-center justify-start px-4 pt-4'>
                     <span className='text-md line-clamp-1 text-center font-semibold'>

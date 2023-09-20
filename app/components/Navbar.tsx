@@ -5,9 +5,9 @@ import { IconHeart, IconSearch, IconCart } from './Icons';
 
 export function Navbar() {
   return (
-    <nav className='flex items-center justify-between md:px-5 px-4 py-3 bg-main-950 w-full'>
+    <nav className='flex w-full items-center justify-between px-4 py-3 md:px-5'>
       {/* Title */}
-      <h1 className='text-xl lg:text-2xl text-white font-bold'>
+      <h1 className='text-xl font-bold lg:text-2xl'>
         {/* <a href='/'>WedgeWood</a> */}
         <a className='flex items-center gap-1' href='/'>
           <div className='text-5xl font-bold'>W</div>
@@ -22,13 +22,13 @@ export function Navbar() {
       <DesktopMenu />
 
       {/* Search, cart & favorites */}
-      <div className='lg:flex justify-center gap-2 md:w-[200px] py-2 px-2 rounded-xl bg-main-100 group hidden'>
+      <div className='group hidden justify-center gap-2 rounded-xl px-2 py-2 md:w-[200px] lg:flex'>
         <IconSearch />
         <input
           placeholder='Search'
           className='w-1/2 bg-transparent focus:outline-none'
         />
-        <div className='flex gap-4 items-center'>
+        <div className='flex items-center gap-4'>
           <IconHeart />
           <IconCart />
         </div>

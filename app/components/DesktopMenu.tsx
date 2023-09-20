@@ -12,7 +12,7 @@ import {
 
 export function DesktopMenu() {
   const style =
-    'flex items-center text-main-100 justify-center gap-1 border-b-2 pb-1 border-transparent hover:cursor-pointer hover:-translate-y-0.5 p-2 rounded-xl hover:text-main-400 text-md';
+    'flex items-center justify-center gap-1 border-b-2 pb-1 border-transparent hover:cursor-pointer hover:-translate-y-0.5 p-2 rounded-xl text-md';
 
   return (
     <div className='mx-auto hidden flex-wrap justify-evenly gap-10 py-4 text-lg lg:flex'>
