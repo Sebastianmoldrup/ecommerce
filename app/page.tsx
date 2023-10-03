@@ -39,5 +39,13 @@ export default function Home() {
   let total = orders.reduce((sum, order) => sum + order.amount, 0);
   console.log(total);
 
+  ///
+  const data = await fetch('http://dropx.io/api/v1/products/');
+
+  if (data.status !== 200) return <p className='p-10'>error {data.status}</p>;
+
+  const products: Product[] = (await data.json())?.products || [];
+  ///
+
   return <main className='m-0 flex h-screen w-full p-0'></main>;
 }

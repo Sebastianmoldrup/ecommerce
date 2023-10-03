@@ -10,7 +10,7 @@ import {
   IconShop,
   IconHeart,
   IconBurger,
-} from './Icons';
+} from '../components/Icons';
 
 export function MobileMenu() {
   const [menuOpen, setMenuOpen] = useState(false);

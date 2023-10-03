@@ -1,7 +1,7 @@
 import { MobileMenu } from './MobileMenu';
 import { DesktopMenu } from './DesktopMenu';
 
-import { IconHeart, IconSearch, IconCart } from './Icons';
+import { IconHeart, IconSearch, IconCart } from '../components/Icons';
 
 export function Navbar() {
   return (

@@ -8,7 +8,7 @@ import {
   IconShop,
   IconHeart,
   IconBurger,
-} from './Icons';
+} from '../components/Icons';
 
 export function DesktopMenu() {
   const style =
