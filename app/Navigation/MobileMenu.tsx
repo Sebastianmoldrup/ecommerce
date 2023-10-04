@@ -20,7 +20,7 @@ export function MobileMenu() {
   };
 
   return (
-    <div className='lg:hidden'>
+    <div className='place-self-end self-center lg:hidden'>
       {/* Hamburger Icon */}
       <div>
         <button

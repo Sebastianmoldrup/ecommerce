@@ -1,7 +1,7 @@
 export function Banner() {
   return (
-    <div className='hidden h-[30px] items-center justify-between bg-paragraph px-4 text-sm font-semibold text-main lg:flex'>
-      <div className='font-bold'>Wedgewood AS</div>
+    <div className='hidden h-[30px] items-center justify-between bg-[#ebebeb] px-4 text-sm font-semibold lg:flex'>
+      <div className='font-bold'>Ecommerce AS</div>
       <ul className='flex gap-2 text-sm'>
         <li className=''>
           <a href='/'>Help</a>

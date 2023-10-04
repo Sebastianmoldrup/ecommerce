@@ -1,6 +1,5 @@
 'use client';
 import Image from 'next/image';
-import { ProductOverview } from './components/ProductOverview';
 import { IconLoading } from './components/Icons';
 
 export default function Home() {
@@ -39,13 +38,19 @@ export default function Home() {
   let total = orders.reduce((sum, order) => sum + order.amount, 0);
   console.log(total);
 
-  ///
-  const data = await fetch('http://dropx.io/api/v1/products/');
-
-  if (data.status !== 200) return <p className='p-10'>error {data.status}</p>;
-
-  const products: Product[] = (await data.json())?.products || [];
-  ///
-
-  return <main className='m-0 flex h-screen w-full p-0'></main>;
+  return (
+    <main className='m-0 flex h-screen w-full p-0'>
+      <div className='flex w-full items-center justify-center'>
+        <Image
+          alt='ecommerce'
+          src='/cardbg.png'
+          width={300}
+          height={300}
+          className='object-contain' // Use object-fill class
+          objectFit='fill'
+        />
+        <div>Dummy text</div>
+      </div>
+    </main>
+  );
 }

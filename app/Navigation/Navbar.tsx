@@ -5,16 +5,13 @@ import { IconHeart, IconSearch, IconCart } from '../components/Icons';
 
 export function Navbar() {
   return (
-    <nav className='flex w-full items-center justify-between bg-gray-200 px-4 py-3 md:px-5'>
+    <nav className='grid grid-cols-2 items-center px-4 py-3 shadow-2xl md:px-5 lg:grid-cols-3'>
       {/* Title */}
-      <h1 className='text-xl font-bold lg:text-2xl'>
+      <h1 className='col-start-1 text-xl font-bold lg:text-2xl'>
         {/* <a href='/'>WedgeWood</a> */}
         <a className='flex items-center gap-1' href='/'>
-          <div className='text-5xl font-bold'>W</div>
-          <div className='flex flex-col text-base'>
-            <div className='h-[15px]'>edge</div>
-            <div>ood</div>
-          </div>
+          <div className='text-5xl font-bold'>E</div>
+          <div className='text-base'>commerce</div>
         </a>
       </h1>
 
@@ -22,12 +19,14 @@ export function Navbar() {
       <DesktopMenu />
 
       {/* Search, cart & favorites */}
-      <div className='group hidden justify-center gap-2 rounded-xl px-2 py-2 md:w-[200px] lg:flex'>
-        <IconSearch />
-        <input
-          placeholder='Search'
-          className='w-1/2 bg-transparent focus:outline-none'
-        />
+      <div className='group col-start-3 hidden justify-center gap-2 place-self-end self-center px-2 py-2 md:w-[350px] lg:flex'>
+        <div className='flex rounded-md bg-[#ebebeb] px-4 py-2'>
+          <IconSearch />
+          <input
+            placeholder='Search'
+            className='bg-transparent focus:outline-none'
+          />
+        </div>
         <div className='flex items-center gap-4'>
           <IconHeart />
           <IconCart />
