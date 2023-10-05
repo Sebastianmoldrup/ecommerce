@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect, useMemo } from 'react';
+import { IconDelivery } from './Icons';
 export default function News() {
   // news list
   const list = [
@@ -15,7 +16,7 @@ export default function News() {
   }
 
   useEffect(() => {
-    const interval = setInterval(cycle, 4000);
+    const interval = setInterval(cycle, 1800);
     return () => clearInterval(interval);
   });
 
@@ -25,11 +26,20 @@ export default function News() {
         {list.map((item, index) => (
           <li
             key={item}
-            className={`flex items-center justify-center delay-200 duration-200 ease-linear ${
-              show === index ? 'block -translate-y-0 animate-marquee' : 'hidden'
+            className={`flex items-center justify-center ${
+              show === index ? 'block animate-marquee' : 'hidden'
             }`}
           >
-            <span>{item}</span>
+            <span>
+              {index === 1 ? (
+                <div className='flex items-center'>
+                  <IconDelivery />
+                  {item}
+                </div>
+              ) : (
+                item
+              )}
+            </span>
           </li>
         ))}
       </ul>

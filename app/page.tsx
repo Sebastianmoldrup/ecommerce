@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import { IconLoading } from './components/Icons';
+import { IconLoading, IconBlob, IconBlobTwo, Wave } from './components/Icons';
 
 export default function Home() {
   const animals = [
@@ -38,10 +38,12 @@ export default function Home() {
   let total = orders.reduce((sum, order) => sum + order.amount, 0);
 
   return (
-    <main className='m-0 flex h-screen w-full p-0'>
-      <div className='flex w-full items-center justify-center gap-14'>
-        <div className='group flex items-center justify-center gap-14'>
-          <div className='grid max-h-[200px] max-w-[200px] grid-cols-1 grid-rows-1 place-items-center'>
+    <main className='m-0 flex h-screen w-full flex-col p-0'>
+      <div className='flex w-full items-start justify-center gap-14 pt-10'>
+        {/* Image section */}
+        <div className='group flex flex-col items-center justify-center gap-14 md:flex-row'>
+          {/* Image section */}
+          <div className='hidden max-h-[200px] max-w-[200px] grid-cols-1 grid-rows-1 place-items-center md:grid'>
             <Image
               alt='ecommerce'
               src='/walletclose.png'
@@ -58,21 +60,31 @@ export default function Home() {
               className='col-start-1 row-start-1 max-h-[150px] max-w-[150px] bg-transparent delay-100 duration-200 ease-in-out group-hover:-translate-y-24 group-hover:-rotate-45'
               objectFit='contain'
             />
+            {/* Blob */}
+            <IconBlobTwo />
           </div>
-          <div className='z-10 flex w-[350px] flex-col gap-y-4 text-justify'>
-            Ecommerce is your dedicated destination for accessing the most
-            exquisite range of products sourced from across the globe. Whether
-            youre in search of state-of-the-art electronics, fashionable attire,
-            or distinctive home decor, rest assured, we have your needs fully
-            catered to. Check out our shop for more!
-            <a
-              href='/shop'
-              className='bg-paragraph px-4 py-2 text-center text-background shadow-xl hover:bg-green-400 hover:text-paragraph'
-            >
-              Take me there!
-            </a>
+          {/* Text section */}
+          <div className='grid grid-cols-1 grid-rows-1 place-items-center'>
+            <div className='z-10 col-start-1 row-start-1 flex w-[300px] flex-col gap-y-4 text-justify md:w-[350px]'>
+              Ecommerce is your dedicated destination for accessing the most
+              exquisite range of products sourced from across the globe. Whether
+              youre in search of state-of-the-art electronics, fashionable
+              attire, or distinctive home decor, rest assured, we have your
+              needs fully catered to. Check out our shop for more!
+              <a
+                href='/shop'
+                className='bg-paragraph px-4 py-2 text-center text-background shadow-xl hover:bg-green-400 hover:text-paragraph'
+              >
+                Take me there!
+              </a>
+            </div>
+            {/* Blob */}
+            <IconBlob />
           </div>
         </div>
+      </div>
+      <div>
+        <Wave />
       </div>
     </main>
   );

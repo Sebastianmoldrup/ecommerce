@@ -10,9 +10,11 @@ const config: Config = {
     extend: {
       keyframes: {
         marquee: {
-          '0%': { transform: 'translatey(-30px)' },
-          '100%': { transform: 'translateX(0px)' },
-          '150%': { transform: 'translatey(30px)' },
+          '0%': { transform: 'translateY(-30px)' }, // Start position
+          '30%': { transform: 'translateY(-30px)' }, // Delay 0%-30% duration
+          '40%': { transform: 'translateY(0)' }, // Move into the box
+          '80%': { transform: 'translateY(0)' }, // Stay in the box for 40% duration
+          '100%': { transform: 'translateY(30px)' }, // Move down under the box
         },
       },
       animation: {
