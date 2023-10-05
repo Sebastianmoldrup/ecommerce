@@ -36,20 +36,43 @@ export default function Home() {
   ];
 
   let total = orders.reduce((sum, order) => sum + order.amount, 0);
-  console.log(total);
 
   return (
     <main className='m-0 flex h-screen w-full p-0'>
-      <div className='flex w-full items-center justify-center'>
-        <Image
-          alt='ecommerce'
-          src='/cardbg.png'
-          width={300}
-          height={300}
-          className='object-contain' // Use object-fill class
-          objectFit='fill'
-        />
-        <div>Dummy text</div>
+      <div className='flex w-full items-center justify-center gap-14'>
+        <div className='group flex items-center justify-center gap-14'>
+          <div className='grid max-h-[200px] max-w-[200px] grid-cols-1 grid-rows-1 place-items-center'>
+            <Image
+              alt='ecommerce'
+              src='/walletclose.png'
+              width={200}
+              height={200}
+              className='z-10 col-start-1 row-start-1 max-h-[150px] max-w-[150px] bg-transparent duration-200 group-hover:-rotate-3'
+              objectFit='contain'
+            />
+            <Image
+              alt='ecommerce'
+              src='/card.png'
+              width={200}
+              height={200}
+              className='col-start-1 row-start-1 max-h-[150px] max-w-[150px] bg-transparent delay-100 duration-200 ease-in-out group-hover:-translate-y-24 group-hover:-rotate-45'
+              objectFit='contain'
+            />
+          </div>
+          <div className='z-10 flex w-[350px] flex-col gap-y-4 text-justify'>
+            Ecommerce is your dedicated destination for accessing the most
+            exquisite range of products sourced from across the globe. Whether
+            youre in search of state-of-the-art electronics, fashionable attire,
+            or distinctive home decor, rest assured, we have your needs fully
+            catered to. Check out our shop for more!
+            <a
+              href='/shop'
+              className='bg-paragraph px-4 py-2 text-center text-background shadow-xl hover:bg-green-400 hover:text-paragraph'
+            >
+              Take me there!
+            </a>
+          </div>
+        </div>
       </div>
     </main>
   );

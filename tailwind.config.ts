@@ -8,6 +8,16 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translatey(-30px)' },
+          '100%': { transform: 'translateX(0px)' },
+          '150%': { transform: 'translatey(30px)' },
+        },
+      },
+      animation: {
+        marquee: 'marquee 2s linear',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
@@ -34,6 +44,10 @@ const config: Config = {
         paragraph: '#2e2e2e',
         highlight: '#4fc4cf',
         stroke: '#181818',
+        background: '#ebebeb',
+      },
+      fontFamily: {
+        body: ['AR One Sans', 'sans-serif'],
       },
     },
   },
