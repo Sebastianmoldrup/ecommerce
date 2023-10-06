@@ -8,7 +8,7 @@ import News from './Components/News';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'WedgeWood',
+  title: 'Ecommerce',
   description: 'Ecommerce website',
 };
 

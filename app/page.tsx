@@ -1,6 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { IconLoading, IconBlob, IconBlobTwo, Wave } from './components/Icons';
+import Ticker from './Components/Ticker';
 
 export default function Home() {
   const animals = [
@@ -83,9 +84,10 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div>
-        <Wave />
+      <div className='flex w-full items-center justify-center'>
+        <Ticker />
       </div>
+      <div>{/* <Wave /> */}</div>
     </main>
   );
 }
