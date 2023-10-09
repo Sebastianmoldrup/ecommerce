@@ -25,32 +25,32 @@ export default function Ticker() {
   //   }
 
   return (
-    <div
-      data-tag='scroller'
-      data-animated='true'
-      className='flex max-w-[600px] justify-center overflow-hidden bg-slate-600/75'
-    >
-      <div data-tag='inner_scroller' className='flex w-max gap-4'>
-        <IconVisa />
-        <IconMaster />
-        <IconKlarna />
-        <IconPaypal />
-        <IconGpay />
-        <IconExpress />
-        <IconAmazon />
-        <IconBitcoin />
-        <IconStripe />
-        {/* Duplicate */}
-        <IconVisa />
-        <IconMaster />
-        <IconKlarna />
-        <IconPaypal />
-        <IconGpay />
-        <IconExpress />
-        <IconAmazon />
-        <IconBitcoin />
-        <IconStripe />
+    <div className='text-bold flex w-full items-center justify-evenly text-2xl text-white md:bg-[#2e2e2e]'>
+      <span>Payment</span>
+      <div data-animated='true' className='scroller'>
+        <div className='scroller__inner'>
+          <IconVisa />
+          <IconMaster />
+          <IconKlarna />
+          <IconPaypal />
+          <IconGpay />
+          <IconExpress />
+          <IconAmazon />
+          <IconBitcoin />
+          <IconStripe />
+          {/* Duplicate */}
+          <IconVisa />
+          <IconMaster />
+          <IconKlarna />
+          <IconPaypal />
+          <IconGpay />
+          <IconExpress />
+          <IconAmazon />
+          <IconBitcoin />
+          <IconStripe />
+        </div>
       </div>
+      <span>Methods</span>
     </div>
   );
 }
