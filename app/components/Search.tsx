@@ -20,8 +20,6 @@ interface Product {
 export default function Search({ products }: { products: Product[] }) {
   const [search, setSearch] = useState('');
   const [show, setShow] = useState(false);
-  console.log('show:', show);
-  console.log('search:', search);
 
   const productList = useMemo(() => {
     /* regex from search query */
@@ -31,11 +29,7 @@ export default function Search({ products }: { products: Product[] }) {
     );
 
     return products.filter((product) => {
-      return (
-        searchRegExp.test(product.title) ||
-        searchRegExp.test(product.description) ||
-        searchRegExp.test(product.category)
-      );
+      return searchRegExp.test(product.title);
     });
   }, [products, search]);
 
@@ -43,6 +37,7 @@ export default function Search({ products }: { products: Product[] }) {
     setShow((prevShow) => !prevShow);
   };
 
+  console.log(productList);
   return (
     <div className='group col-start-3 hidden justify-center gap-2 place-self-end self-center px-2 py-2 md:w-[350px] lg:flex'>
       <div className='flex gap-2 rounded-md bg-[#ebebeb] px-4 py-2'>
