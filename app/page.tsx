@@ -1,8 +1,9 @@
 'use client';
 import Image from 'next/image';
-import { IconLoading, IconBlob, IconBlobTwo, Wave } from './components/Icons';
+import { IconLoading, Wave } from './components/Icons';
 import Ticker from './Components/Ticker';
 import Hero from './Components/Hero';
+import Sale from './Components/Sale';
 
 export default function Home() {
   const animals = [
@@ -41,12 +42,19 @@ export default function Home() {
 
   return (
     <main className='m-0 flex h-screen w-full flex-col p-0'>
-      <div className='my-6 flex flex-col-reverse md:flex-col'>
+      <div className='mt-6 flex flex-col'>
         <Hero />
 
         <Ticker />
       </div>
-      <Wave />
+      <div className='mt-6 grid w-full grid-cols-1 grid-rows-1 place-items-center text-center md:mt-0'>
+        <Wave />
+
+        <h2 className='col-start-1 row-start-1 rounded-sm bg-red-600 px-4 py-2 text-3xl font-semibold uppercase text-white'>
+          Sale
+        </h2>
+        {/* <Sale /> */}
+      </div>
     </main>
   );
 }

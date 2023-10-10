@@ -1,10 +1,14 @@
 import { MobileMenu } from './MobileMenu';
 import { DesktopMenu } from './DesktopMenu';
+import Search from '../Components/Search';
 
-import { IconHeart, IconSearch, IconCart } from '../components/Icons';
-import Dropdown from '../Components/Dropdown';
+export async function Navbar() {
+  const data = await fetch('https://dummyjson.com/products');
 
-export function Navbar() {
+  if (data.status !== 200) return <p className='p-10'>error {data.status}</p>;
+
+  const products: Product[] = (await data.json())?.products || [];
+
   return (
     <nav className='grid grid-cols-2 items-center px-4 py-3 shadow-2xl md:px-5 lg:grid-cols-3'>
       <div className='flex items-center justify-start'>
@@ -20,19 +24,7 @@ export function Navbar() {
       </div>
 
       {/* Search, cart & favorites */}
-      <div className='group col-start-3 hidden justify-center gap-2 place-self-end self-center px-2 py-2 md:w-[350px] lg:flex'>
-        <div className='flex rounded-md bg-[#ebebeb] px-4 py-2'>
-          <IconSearch />
-          <input
-            placeholder='Search'
-            className='bg-transparent focus:outline-none'
-          />
-        </div>
-        <div className='flex items-center gap-4'>
-          <IconHeart />
-          <IconCart />
-        </div>
-      </div>
+      <Search products={products} />
 
       {/* Mobile menu */}
       <MobileMenu />

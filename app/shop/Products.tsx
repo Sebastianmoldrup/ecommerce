@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect, useMemo } from 'react';
 import Image from 'next/image';
-import { IconSearch, IconCart, IconSale, IconHeart } from '../components/Icons';
+import { IconSearch, IconHeart } from '../components/Icons';
 
 interface Product {
   id: number;

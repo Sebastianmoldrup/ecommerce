@@ -1,12 +1,11 @@
 import Image from 'next/image';
-import { IconBlob, IconBlobTwo } from './Icons';
+import { IconBusiness } from './Icons';
 
 export default function Hero() {
   return (
-    <div className='my-20 flex w-full items-start justify-center gap-14 px-4'>
-      {/* Image section */}
+    <div className='mb-20 mt-10 flex w-full items-start justify-center gap-14 px-4 md:mt-20'>
+      {/* Desktop image section */}
       <div className='group flex flex-col items-center justify-center gap-14 md:flex-row'>
-        {/* Image section */}
         <div className='hidden max-h-[200px] max-w-[200px] grid-cols-1 grid-rows-1 place-items-center md:grid'>
           <Image
             alt='ecommerce'
@@ -25,6 +24,8 @@ export default function Hero() {
             objectFit='contain'
           />
         </div>
+        {/* Mobile svg */}
+        <IconBusiness />
         {/* Text section */}
         <div className='grid grid-cols-1 grid-rows-1 place-items-center'>
           <div className='z-10 col-start-1 row-start-1 flex w-[300px] flex-col gap-y-4 text-justify md:w-[350px]'>

@@ -25,8 +25,8 @@ export default function Ticker() {
   //   }
 
   return (
-    <div className='text-bold flex w-full items-center justify-evenly text-2xl text-white md:bg-[#2e2e2e]'>
-      <span>Payment</span>
+    <div className='text-bold flex w-full items-center justify-evenly bg-[#2e2e2e] text-2xl text-white'>
+      <span className='hidden px-4 md:block'>Payment</span>
       <div data-animated='true' className='scroller'>
         <div className='scroller__inner'>
           <IconVisa />
@@ -50,7 +50,7 @@ export default function Ticker() {
           <IconStripe />
         </div>
       </div>
-      <span>Methods</span>
+      <span className='hidden px-4 md:block'>Methods</span>
     </div>
   );
 }
