@@ -1,6 +1,7 @@
 'use client';
 import Image from 'next/image';
 import data from '@/app/_data/sneakers.json';
+import { sneakerTypes } from '@/app/_utils/sneakerTypes';
 
 import { useState } from 'react';
 
