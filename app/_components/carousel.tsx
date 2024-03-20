@@ -24,10 +24,10 @@ export default function CarouselShowcase() {
   const [selectedBrand, setSelectedBrand] = useState('Nike');
 
   return (
-    <div className='flex flex-col items-center space-y-8'>
-      <div className='text-center space-y-4'>
+    <div className='flex flex-col items-center gap-y-8'>
+      <div className='text-center gap-y-4'>
         <h2 className='text-3xl font-semibold'>Select your brand</h2>
-        <ul className='flex space-x-4'>
+        <ul className='flex gap-x-4'>
           {data.sneakers
             .reduce((acc, sneaker) => {
               if (!acc.includes(sneaker.brand_name)) {
@@ -48,11 +48,11 @@ export default function CarouselShowcase() {
           {data.sneakers.map((sneaker, index) => (
             <CarouselItem
               key={index}
-              className='pl-1 md:basis-1/2 lg:basis-1/3 w-[200px]'
+              className='pl-1 md:basis-1/2 lg:basis-1/3 w-[300px]'
             >
-              <div className='p-1'>
+              <div className=''>
                 <Card>
-                  <CardContent className='flex flex-col aspect-square items-center justify-center p-6'>
+                  <CardContent className='flex flex-col aspect-square items-center justify-between p-4 h-[165px] w-[125px]'>
                     <Image
                       alt='sneaker'
                       width={125}

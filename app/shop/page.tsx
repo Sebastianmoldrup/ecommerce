@@ -28,9 +28,12 @@ export default function Shop() {
                 <h2 className='text-gray-900 title-font text-lg font-medium'>
                   {sneaker.name}
                 </h2>
-                <p className='mt-1'>
-                  ${(sneaker.retail_price_cents ?? 0) / 100}
-                </p>
+                <div className='flex items-center justify-between'>
+                  <p className='mt-1'>
+                    ${(sneaker.retail_price_cents ?? 0) / 100}
+                  </p>
+                  <button>Buy</button>
+                </div>
               </div>
             </div>
           ))}
