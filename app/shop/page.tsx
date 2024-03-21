@@ -2,7 +2,7 @@ import Image from 'next/image';
 import data from '@/app/_data/sneakers.json';
 
 export default function Shop() {
-  data.sneakers.map((sneaker) => console.log(sneaker.name));
+  // data.sneakers.map((sneaker) => console.log(sneaker.name));
 
   return (
     <section className='text-gray-600 body-font'>
@@ -17,7 +17,7 @@ export default function Shop() {
                 <Image
                   alt='sneaker'
                   fill
-                  className='object-cover object-center w-full h-full block'
+                  className='object-cover object-center w-full h-full block rotate-12'
                   src={sneaker.main_picture_url}
                 />
               </a>
