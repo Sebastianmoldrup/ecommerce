@@ -3,8 +3,6 @@ import data from '@/app/_data/sneakers.json';
 import Link from 'next/link';
 
 export default function Shop() {
-  // data.sneakers.map((sneaker) => console.log(sneaker.name));
-
   return (
     <section className='text-gray-600 body-font'>
       <div className='container px-5 py-24 mx-auto'>
@@ -35,7 +33,10 @@ export default function Shop() {
                   <p className='mt-1'>
                     ${(sneaker.retail_price_cents ?? 0) / 100}
                   </p>
-                  <Link href={`/shop/${sneaker.slug}`} className="py-2 px-4 bg-accent-foreground text-white hover:bg-accent hover:text-accent-foreground hover:cursor-pointer">Buy</Link>
+                  <div className="flex gap-x-2">
+                    <Link href={`/shop/${sneaker.slug}`} className="py-2 px-4 bg-accent-foreground text-white hover:bg-accent hover:text-accent-foreground hover:cursor-pointer">More</Link>
+                    <div className="py-2 px-4 bg-accent-foreground text-white hover:bg-accent hover:text-accent-foreground hover:cursor-pointer">Add to cart</div>
+                  </div>
                 </div>
               </div>
             </div>
